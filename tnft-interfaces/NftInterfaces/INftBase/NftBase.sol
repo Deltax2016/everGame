@@ -81,7 +81,7 @@ abstract contract NftBase is INftBase {
         _addrOwner = to;
     }
 
-    function setManager(address manager, TvmCell payload) public override onlyManager {
+    function setManager(address manager, TvmCell payload) public override onlyOwner {
         require(msg.value != 0);
         tvm.accept();
         tvm.rawReserve(msg.value, 1);
@@ -90,7 +90,7 @@ abstract contract NftBase is INftBase {
         IManager(manager).setManagerCallback{value: 0, flag: 128}(payload);
     }
 
-    function returnOwnership() public override onlyManager {
+    function returnOwnership() public override onlyOwner {
         require(_addrManager != _addrOwner);
         tvm.accept();
         tvm.rawReserve(msg.value, 1);
@@ -120,6 +120,11 @@ abstract contract NftBase is INftBase {
 
     modifier onlyManager virtual {
         require(msg.sender == _addrManager, NftErrors.sender_is_not_owner);
+        _;
+    }
+
+    modifier onlyOwner virtual {
+        require(msg.sender == _addrOwner, NftErrors.sender_is_not_owner);
         _;
     }
 
