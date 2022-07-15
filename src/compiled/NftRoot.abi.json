@@ -15,8 +15,9 @@
 		{
 			"name": "mintNft",
 			"inputs": [
-				{"name":"dataName","type":"string"},
-				{"name":"json","type":"string"}
+				{"name":"game","type":"string"},
+				{"name":"code","type":"string"},
+				{"name":"icon","type":"string"}
 			],
 			"outputs": [
 			]

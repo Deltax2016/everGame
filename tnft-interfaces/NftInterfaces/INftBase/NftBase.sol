@@ -119,7 +119,7 @@ abstract contract NftBase is INftBase {
     }
 
     modifier onlyManager virtual {
-        require(msg.sender == _addrOwner, NftErrors.sender_is_not_owner);
+        require(msg.sender == _addrManager, NftErrors.sender_is_not_owner);
         _;
     }
 

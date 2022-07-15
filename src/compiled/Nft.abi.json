@@ -7,8 +7,9 @@
 			"name": "constructor",
 			"inputs": [
 				{"name":"addrOwner","type":"address"},
-				{"name":"json","type":"string"},
-				{"name":"dataName","type":"string"}
+				{"name":"code","type":"string"},
+				{"name":"game","type":"string"},
+				{"name":"icon","type":"string"}
 			],
 			"outputs": [
 			]
@@ -29,7 +30,7 @@
 				{"name":"answerId","type":"uint32"}
 			],
 			"outputs": [
-				{"name":"dataName","type":"string"}
+				{"name":"game","type":"string"}
 			]
 		},
 		{
@@ -71,12 +72,21 @@
 			]
 		},
 		{
-			"name": "getJSONInfo",
+			"name": "getCODEInfo",
 			"inputs": [
 				{"name":"answerId","type":"uint32"}
 			],
 			"outputs": [
-				{"name":"json","type":"string"}
+				{"name":"code","type":"string"}
+			]
+		},
+		{
+			"name": "getIcon",
+			"inputs": [
+				{"name":"answerId","type":"uint32"}
+			],
+			"outputs": [
+				{"name":"icon","type":"string"}
 			]
 		}
 	],
@@ -110,8 +120,9 @@
 		{"name":"_addrRoot","type":"address"},
 		{"name":"_addrOwner","type":"address"},
 		{"name":"_addrManager","type":"address"},
-		{"name":"_json","type":"string"},
-		{"name":"_dataName","type":"string"},
+		{"name":"_code","type":"string"},
+		{"name":"_icon","type":"string"},
+		{"name":"_game","type":"string"},
 		{"name":"_supportedInterfaces","type":"optional(cell)"}
 	]
 }
