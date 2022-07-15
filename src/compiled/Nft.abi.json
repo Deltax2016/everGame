@@ -1,0 +1,117 @@
+{
+	"ABI version": 2,
+	"version": "2.2",
+	"header": ["pubkey", "time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+				{"name":"addrOwner","type":"address"},
+				{"name":"json","type":"string"},
+				{"name":"dataName","type":"string"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "supportsInterface",
+			"inputs": [
+				{"name":"answerId","type":"uint32"},
+				{"name":"interfaceID","type":"uint32"}
+			],
+			"outputs": [
+				{"name":"value0","type":"bool"}
+			]
+		},
+		{
+			"name": "getName",
+			"inputs": [
+				{"name":"answerId","type":"uint32"}
+			],
+			"outputs": [
+				{"name":"dataName","type":"string"}
+			]
+		},
+		{
+			"name": "transferOwnership",
+			"inputs": [
+				{"name":"sendGasToAddr","type":"address"},
+				{"name":"addrTo","type":"address"},
+				{"components":[{"name":"value","type":"uint128"},{"name":"payload","type":"cell"}],"name":"callbacks","type":"map(address,tuple)"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setManager",
+			"inputs": [
+				{"name":"manager","type":"address"},
+				{"name":"payload","type":"cell"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "returnOwnership",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getInfo",
+			"inputs": [
+				{"name":"answerId","type":"uint32"}
+			],
+			"outputs": [
+				{"name":"id","type":"uint256"},
+				{"name":"addrOwner","type":"address"},
+				{"name":"addrCollection","type":"address"},
+				{"name":"addrManager","type":"address"}
+			]
+		},
+		{
+			"name": "getJSONInfo",
+			"inputs": [
+				{"name":"answerId","type":"uint32"}
+			],
+			"outputs": [
+				{"name":"json","type":"string"}
+			]
+		}
+	],
+	"data": [
+		{"key":1,"name":"_id","type":"uint256"}
+	],
+	"events": [
+		{
+			"name": "TokenWasMinted",
+			"inputs": [
+				{"name":"owner","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "OwnershipTransferred",
+			"inputs": [
+				{"name":"oldOwner","type":"address"},
+				{"name":"newOwner","type":"address"}
+			],
+			"outputs": [
+			]
+		}
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"_id","type":"uint256"},
+		{"name":"_addrRoot","type":"address"},
+		{"name":"_addrOwner","type":"address"},
+		{"name":"_addrManager","type":"address"},
+		{"name":"_json","type":"string"},
+		{"name":"_dataName","type":"string"},
+		{"name":"_supportedInterfaces","type":"optional(cell)"}
+	]
+}

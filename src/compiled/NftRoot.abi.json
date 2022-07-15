@@ -1,0 +1,98 @@
+{
+	"ABI version": 2,
+	"version": "2.2",
+	"header": ["pubkey", "time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+				{"name":"codeNft","type":"cell"},
+				{"name":"ownerPubkey","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "mintNft",
+			"inputs": [
+				{"name":"dataName","type":"string"},
+				{"name":"json","type":"string"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "withdraw",
+			"inputs": [
+				{"name":"to","type":"address"},
+				{"name":"value","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setRemainOnNft",
+			"inputs": [
+				{"name":"remainOnNft","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getRemainOnNft",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"uint128"}
+			]
+		},
+		{
+			"name": "getTotalMinted",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"uint256"}
+			]
+		},
+		{
+			"name": "resolveCodeHashNft",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"codeHashData","type":"uint256"}
+			]
+		},
+		{
+			"name": "resolveNft",
+			"inputs": [
+				{"name":"addrRoot","type":"address"},
+				{"name":"id","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"addrNft","type":"address"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+		{
+			"name": "TokenWasMinted",
+			"inputs": [
+				{"name":"nftAddr","type":"address"},
+				{"name":"creatorAddr","type":"address"}
+			],
+			"outputs": [
+			]
+		}
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"_codeNft","type":"cell"},
+		{"name":"_ownerPubkey","type":"uint256"},
+		{"name":"_totalMinted","type":"uint256"},
+		{"name":"_remainOnNft","type":"uint128"}
+	]
+}
